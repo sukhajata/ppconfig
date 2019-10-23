@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package config;
+
+message SetDesiredRequest {
+    string identifier = 1;
+    string fieldName = 2;
+    string fieldValue = 3;
+} 
+
+message CheckConsistencyRequest {
+    string deviceEUI = 1;
+    int32 slot = 2;
+    int32 fieldIndex = 3;
+    int32 numRetries = 4;
+}
+
+message UpdateReportedRequest {
+    string deviceEUI = 1;
+    int32 fieldIndex = 2;
+    string fieldValue = 3;
+}
+
+message Response {
+    string reply = 1;
+}
+
+message ConfigFields {
+    repeated ConfigField fields = 1;
+}
+
+message ConfigField{
+    string name = 1;
+    int32 index = 2;
+    string desired = 3;
+    string reported = 4;
+    string fieldType = 5;
+}
+
+message NewConfigRequest {
+    string deviceEUI = 1;
+    string identifier = 2;
+}
+
+message Identifier{
+    string identifier = 1;
+}
+
+message GetConfigByNameRequest {
+    string identifier = 1;
+    string fieldName = 2;
+}
+
+
+service ConfigService {
+
+    rpc SetDesired(SetDesiredRequest) returns (Response) {}
+
+    rpc CheckConsistency(CheckConsistencyRequest) returns (Response) {}
+
+    rpc UpdateReported(UpdateReportedRequest) returns (Response) {}
+
+    rpc GetConfigByName(GetConfigByNameRequest) returns (ConfigField) {}
+
+    rpc GetAllConfig(Identifier) returns (ConfigFields) {}
+
+    rpc CreatePendingConfig(Identifier) returns (Response) {}
+
+    rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
+
+}
