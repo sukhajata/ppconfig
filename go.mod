@@ -1,4 +1,4 @@
-module ppconfig
+module github.com/sukhajata/ppconfig
 
 go 1.13
 
