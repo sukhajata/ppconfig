@@ -2,7 +2,7 @@
 #commands for generating client server code with protoc
 
 #go
-export PATH=$PATH:/Users/timcranfield/go/bin
+export PATH=$PATH:~/go/bin
 
 protoc --go_out=plugins=grpc:. *.proto 
 

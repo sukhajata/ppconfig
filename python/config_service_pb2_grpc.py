@@ -29,14 +29,24 @@ class ConfigServiceStub(object):
         request_serializer=config__service__pb2.UpdateReportedRequest.SerializeToString,
         response_deserializer=config__service__pb2.Response.FromString,
         )
+    self.GetConfigByName = channel.unary_unary(
+        '/config.ConfigService/GetConfigByName',
+        request_serializer=config__service__pb2.GetConfigByNameRequest.SerializeToString,
+        response_deserializer=config__service__pb2.ConfigField.FromString,
+        )
     self.GetAllConfig = channel.unary_unary(
         '/config.ConfigService/GetAllConfig',
-        request_serializer=config__service__pb2.DeviceEUI.SerializeToString,
+        request_serializer=config__service__pb2.Identifier.SerializeToString,
         response_deserializer=config__service__pb2.ConfigFields.FromString,
+        )
+    self.CreatePendingConfig = channel.unary_unary(
+        '/config.ConfigService/CreatePendingConfig',
+        request_serializer=config__service__pb2.Identifier.SerializeToString,
+        response_deserializer=config__service__pb2.Response.FromString,
         )
     self.CreateNewConfig = channel.unary_unary(
         '/config.ConfigService/CreateNewConfig',
-        request_serializer=config__service__pb2.DeviceEUI.SerializeToString,
+        request_serializer=config__service__pb2.NewConfigRequest.SerializeToString,
         response_deserializer=config__service__pb2.Response.FromString,
         )
 
@@ -66,7 +76,21 @@ class ConfigServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetConfigByName(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetAllConfig(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreatePendingConfig(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -98,14 +122,24 @@ def add_ConfigServiceServicer_to_server(servicer, server):
           request_deserializer=config__service__pb2.UpdateReportedRequest.FromString,
           response_serializer=config__service__pb2.Response.SerializeToString,
       ),
+      'GetConfigByName': grpc.unary_unary_rpc_method_handler(
+          servicer.GetConfigByName,
+          request_deserializer=config__service__pb2.GetConfigByNameRequest.FromString,
+          response_serializer=config__service__pb2.ConfigField.SerializeToString,
+      ),
       'GetAllConfig': grpc.unary_unary_rpc_method_handler(
           servicer.GetAllConfig,
-          request_deserializer=config__service__pb2.DeviceEUI.FromString,
+          request_deserializer=config__service__pb2.Identifier.FromString,
           response_serializer=config__service__pb2.ConfigFields.SerializeToString,
+      ),
+      'CreatePendingConfig': grpc.unary_unary_rpc_method_handler(
+          servicer.CreatePendingConfig,
+          request_deserializer=config__service__pb2.Identifier.FromString,
+          response_serializer=config__service__pb2.Response.SerializeToString,
       ),
       'CreateNewConfig': grpc.unary_unary_rpc_method_handler(
           servicer.CreateNewConfig,
-          request_deserializer=config__service__pb2.DeviceEUI.FromString,
+          request_deserializer=config__service__pb2.NewConfigRequest.FromString,
           response_serializer=config__service__pb2.Response.SerializeToString,
       ),
   }

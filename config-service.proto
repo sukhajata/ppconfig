@@ -18,7 +18,7 @@ message CheckConsistencyRequest {
 message UpdateReportedRequest {
     string deviceEUI = 1;
     int32 fieldIndex = 2;
-    string fieldValue = 3;
+    bytes fieldValue = 3;
 }
 
 message Response {
