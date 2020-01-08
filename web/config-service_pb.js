@@ -1182,7 +1182,8 @@ proto.config.ConfigField.toObject = function(includeInstance, msg) {
     index: jspb.Message.getFieldWithDefault(msg, 2, 0),
     desired: jspb.Message.getFieldWithDefault(msg, 3, ""),
     reported: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    fieldtype: jspb.Message.getFieldWithDefault(msg, 5, "")
+    fieldtype: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1238,6 +1239,10 @@ proto.config.ConfigField.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldtype(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -1300,6 +1305,13 @@ proto.config.ConfigField.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1393,6 +1405,24 @@ proto.config.ConfigField.prototype.getFieldtype = function() {
  */
 proto.config.ConfigField.prototype.setFieldtype = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string description = 6;
+ * @return {string}
+ */
+proto.config.ConfigField.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.config.ConfigField} returns this
+ */
+proto.config.ConfigField.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

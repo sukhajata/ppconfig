@@ -35,6 +35,7 @@ message ConfigField{
     string desired = 3;
     string reported = 4;
     string fieldType = 5;
+    string description = 6;
 }
 
 message NewConfigRequest {
