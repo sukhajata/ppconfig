@@ -51,6 +51,10 @@ message GetConfigByNameRequest {
     string fieldName = 2;
 }
 
+message UpdateFirmwareRequest {
+    string firmware = 1;
+}
+
 
 service ConfigService {
 
@@ -67,5 +71,7 @@ service ConfigService {
     rpc CreatePendingConfig(Identifier) returns (Response) {}
 
     rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
+
+    rpc UpdateFirmware(UpdateFirmwareRequest) returns (Response) {}
 
 }

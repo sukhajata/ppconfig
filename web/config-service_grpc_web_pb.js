@@ -626,5 +626,85 @@ proto.config.ConfigServicePromiseClient.prototype.createNewConfig =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.config.UpdateFirmwareRequest,
+ *   !proto.config.Response>}
+ */
+const methodDescriptor_ConfigService_UpdateFirmware = new grpc.web.MethodDescriptor(
+  '/config.ConfigService/UpdateFirmware',
+  grpc.web.MethodType.UNARY,
+  proto.config.UpdateFirmwareRequest,
+  proto.config.Response,
+  /**
+   * @param {!proto.config.UpdateFirmwareRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.config.UpdateFirmwareRequest,
+ *   !proto.config.Response>}
+ */
+const methodInfo_ConfigService_UpdateFirmware = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.config.Response,
+  /**
+   * @param {!proto.config.UpdateFirmwareRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.config.UpdateFirmwareRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.config.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.config.ConfigServiceClient.prototype.updateFirmware =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/config.ConfigService/UpdateFirmware',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_UpdateFirmware,
+      callback);
+};
+
+
+/**
+ * @param {!proto.config.UpdateFirmwareRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.config.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.config.ConfigServicePromiseClient.prototype.updateFirmware =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/config.ConfigService/UpdateFirmware',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_UpdateFirmware);
+};
+
+
 module.exports = proto.config;
 
