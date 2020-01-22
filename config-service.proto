@@ -36,6 +36,7 @@ message ConfigField{
     string reported = 4;
     string fieldType = 5;
     string description = 6;
+    string default = 7;
 }
 
 message NewConfigRequest {
