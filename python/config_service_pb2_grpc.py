@@ -52,7 +52,7 @@ class ConfigServiceStub(object):
     self.GetNewConfigDoc = channel.unary_unary(
         '/config.ConfigService/GetNewConfigDoc',
         request_serializer=config__service__pb2.Identifier.SerializeToString,
-        response_deserializer=config__service__pb2.Response.FromString,
+        response_deserializer=config__service__pb2.ConfigDoc.FromString,
         )
     self.UpdateFirmware = channel.unary_unary(
         '/config.ConfigService/UpdateFirmware',
@@ -169,7 +169,7 @@ def add_ConfigServiceServicer_to_server(servicer, server):
       'GetNewConfigDoc': grpc.unary_unary_rpc_method_handler(
           servicer.GetNewConfigDoc,
           request_deserializer=config__service__pb2.Identifier.FromString,
-          response_serializer=config__service__pb2.Response.SerializeToString,
+          response_serializer=config__service__pb2.ConfigDoc.SerializeToString,
       ),
       'UpdateFirmware': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateFirmware,

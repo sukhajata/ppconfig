@@ -630,13 +630,13 @@ proto.config.ConfigServicePromiseClient.prototype.createNewConfig =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.config.Identifier,
- *   !proto.config.Response>}
+ *   !proto.config.ConfigDoc>}
  */
 const methodDescriptor_ConfigService_GetNewConfigDoc = new grpc.web.MethodDescriptor(
   '/config.ConfigService/GetNewConfigDoc',
   grpc.web.MethodType.UNARY,
   proto.config.Identifier,
-  proto.config.Response,
+  proto.config.ConfigDoc,
   /**
    * @param {!proto.config.Identifier} request
    * @return {!Uint8Array}
@@ -644,7 +644,7 @@ const methodDescriptor_ConfigService_GetNewConfigDoc = new grpc.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto.config.Response.deserializeBinary
+  proto.config.ConfigDoc.deserializeBinary
 );
 
 
@@ -652,10 +652,10 @@ const methodDescriptor_ConfigService_GetNewConfigDoc = new grpc.web.MethodDescri
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.config.Identifier,
- *   !proto.config.Response>}
+ *   !proto.config.ConfigDoc>}
  */
 const methodInfo_ConfigService_GetNewConfigDoc = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.config.Response,
+  proto.config.ConfigDoc,
   /**
    * @param {!proto.config.Identifier} request
    * @return {!Uint8Array}
@@ -663,7 +663,7 @@ const methodInfo_ConfigService_GetNewConfigDoc = new grpc.web.AbstractClientBase
   function(request) {
     return request.serializeBinary();
   },
-  proto.config.Response.deserializeBinary
+  proto.config.ConfigDoc.deserializeBinary
 );
 
 
@@ -672,9 +672,9 @@ const methodInfo_ConfigService_GetNewConfigDoc = new grpc.web.AbstractClientBase
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.config.Response)}
+ * @param {function(?grpc.web.Error, ?proto.config.ConfigDoc)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.config.ConfigDoc>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.config.ConfigServiceClient.prototype.getNewConfigDoc =
@@ -693,7 +693,7 @@ proto.config.ConfigServiceClient.prototype.getNewConfigDoc =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.config.Response>}
+ * @return {!Promise<!proto.config.ConfigDoc>}
  *     A native promise that resolves to the response
  */
 proto.config.ConfigServicePromiseClient.prototype.getNewConfigDoc =

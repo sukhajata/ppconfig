@@ -79,7 +79,7 @@ service ConfigService {
 
     rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
 
-    rpc GetNewConfigDoc(Identifier) returns (Response) {}
+    rpc GetNewConfigDoc(Identifier) returns (ConfigDoc) {}
 
     rpc UpdateFirmware(UpdateFirmwareRequest) returns (Response) {}
 
