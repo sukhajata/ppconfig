@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='config',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xa5\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12=\n\x13\x43reatePendingConfig\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12?\n\x0f\x43reateNewConfig\x12\x18.config.NewConfigRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xe0\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12=\n\x13\x43reatePendingConfig\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12?\n\x0f\x43reateNewConfig\x12\x18.config.NewConfigRequest\x1a\x10.config.Response\"\x00\x12\x39\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
 )
 
 
@@ -199,6 +199,118 @@ _RESPONSE = _descriptor.Descriptor(
 )
 
 
+_CONFIGDOC_DESIREDENTRY = _descriptor.Descriptor(
+  name='DesiredEntry',
+  full_name='config.ConfigDoc.DesiredEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='config.ConfigDoc.DesiredEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='config.ConfigDoc.DesiredEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=437,
+  serialized_end=483,
+)
+
+_CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
+  name='ReportedEntry',
+  full_name='config.ConfigDoc.ReportedEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='config.ConfigDoc.ReportedEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='config.ConfigDoc.ReportedEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=485,
+  serialized_end=532,
+)
+
+_CONFIGDOC = _descriptor.Descriptor(
+  name='ConfigDoc',
+  full_name='config.ConfigDoc',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='desired', full_name='config.ConfigDoc.desired', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='reported', full_name='config.ConfigDoc.reported', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_CONFIGDOC_DESIREDENTRY, _CONFIGDOC_REPORTEDENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=324,
+  serialized_end=532,
+)
+
+
 _CONFIGFIELDS = _descriptor.Descriptor(
   name='ConfigFields',
   full_name='config.ConfigFields',
@@ -225,8 +337,8 @@ _CONFIGFIELDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=374,
+  serialized_start=534,
+  serialized_end=585,
 )
 
 
@@ -298,8 +410,8 @@ _CONFIGFIELD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=377,
-  serialized_end=511,
+  serialized_start=588,
+  serialized_end=722,
 )
 
 
@@ -336,8 +448,8 @@ _NEWCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=513,
-  serialized_end=570,
+  serialized_start=724,
+  serialized_end=781,
 )
 
 
@@ -367,8 +479,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=572,
-  serialized_end=604,
+  serialized_start=783,
+  serialized_end=815,
 )
 
 
@@ -405,8 +517,8 @@ _GETCONFIGBYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=606,
-  serialized_end=669,
+  serialized_start=817,
+  serialized_end=880,
 )
 
 
@@ -436,15 +548,20 @@ _UPDATEFIRMWAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=671,
-  serialized_end=712,
+  serialized_start=882,
+  serialized_end=923,
 )
 
+_CONFIGDOC_DESIREDENTRY.containing_type = _CONFIGDOC
+_CONFIGDOC_REPORTEDENTRY.containing_type = _CONFIGDOC
+_CONFIGDOC.fields_by_name['desired'].message_type = _CONFIGDOC_DESIREDENTRY
+_CONFIGDOC.fields_by_name['reported'].message_type = _CONFIGDOC_REPORTEDENTRY
 _CONFIGFIELDS.fields_by_name['fields'].message_type = _CONFIGFIELD
 DESCRIPTOR.message_types_by_name['SetDesiredRequest'] = _SETDESIREDREQUEST
 DESCRIPTOR.message_types_by_name['CheckConsistencyRequest'] = _CHECKCONSISTENCYREQUEST
 DESCRIPTOR.message_types_by_name['UpdateReportedRequest'] = _UPDATEREPORTEDREQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
+DESCRIPTOR.message_types_by_name['ConfigDoc'] = _CONFIGDOC
 DESCRIPTOR.message_types_by_name['ConfigFields'] = _CONFIGFIELDS
 DESCRIPTOR.message_types_by_name['ConfigField'] = _CONFIGFIELD
 DESCRIPTOR.message_types_by_name['NewConfigRequest'] = _NEWCONFIGREQUEST
@@ -480,6 +597,29 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   # @@protoc_insertion_point(class_scope:config.Response)
   })
 _sym_db.RegisterMessage(Response)
+
+ConfigDoc = _reflection.GeneratedProtocolMessageType('ConfigDoc', (_message.Message,), {
+
+  'DesiredEntry' : _reflection.GeneratedProtocolMessageType('DesiredEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CONFIGDOC_DESIREDENTRY,
+    '__module__' : 'config_service_pb2'
+    # @@protoc_insertion_point(class_scope:config.ConfigDoc.DesiredEntry)
+    })
+  ,
+
+  'ReportedEntry' : _reflection.GeneratedProtocolMessageType('ReportedEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CONFIGDOC_REPORTEDENTRY,
+    '__module__' : 'config_service_pb2'
+    # @@protoc_insertion_point(class_scope:config.ConfigDoc.ReportedEntry)
+    })
+  ,
+  'DESCRIPTOR' : _CONFIGDOC,
+  '__module__' : 'config_service_pb2'
+  # @@protoc_insertion_point(class_scope:config.ConfigDoc)
+  })
+_sym_db.RegisterMessage(ConfigDoc)
+_sym_db.RegisterMessage(ConfigDoc.DesiredEntry)
+_sym_db.RegisterMessage(ConfigDoc.ReportedEntry)
 
 ConfigFields = _reflection.GeneratedProtocolMessageType('ConfigFields', (_message.Message,), {
   'DESCRIPTOR' : _CONFIGFIELDS,
@@ -524,6 +664,8 @@ UpdateFirmwareRequest = _reflection.GeneratedProtocolMessageType('UpdateFirmware
 _sym_db.RegisterMessage(UpdateFirmwareRequest)
 
 
+_CONFIGDOC_DESIREDENTRY._options = None
+_CONFIGDOC_REPORTEDENTRY._options = None
 
 _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   name='ConfigService',
@@ -531,8 +673,8 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=715,
-  serialized_end=1264,
+  serialized_start=926,
+  serialized_end=1534,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetDesired',
@@ -598,9 +740,18 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='GetNewConfigDoc',
+    full_name='config.ConfigService.GetNewConfigDoc',
+    index=7,
+    containing_service=None,
+    input_type=_IDENTIFIER,
+    output_type=_RESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='UpdateFirmware',
     full_name='config.ConfigService.UpdateFirmware',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=_UPDATEFIRMWAREREQUEST,
     output_type=_RESPONSE,

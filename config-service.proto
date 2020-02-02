@@ -25,6 +25,11 @@ message Response {
     string reply = 1;
 }
 
+message ConfigDoc {
+    map<string, string> desired = 1;
+    map<string, string> reported = 2;
+}
+
 message ConfigFields {
     repeated ConfigField fields = 1;
 }
@@ -73,6 +78,8 @@ service ConfigService {
     rpc CreatePendingConfig(Identifier) returns (Response) {}
 
     rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
+
+    rpc GetNewConfigDoc(Identifier) returns (Response) {}
 
     rpc UpdateFirmware(UpdateFirmwareRequest) returns (Response) {}
 

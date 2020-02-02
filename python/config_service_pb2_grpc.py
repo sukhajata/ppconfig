@@ -49,6 +49,11 @@ class ConfigServiceStub(object):
         request_serializer=config__service__pb2.NewConfigRequest.SerializeToString,
         response_deserializer=config__service__pb2.Response.FromString,
         )
+    self.GetNewConfigDoc = channel.unary_unary(
+        '/config.ConfigService/GetNewConfigDoc',
+        request_serializer=config__service__pb2.Identifier.SerializeToString,
+        response_deserializer=config__service__pb2.Response.FromString,
+        )
     self.UpdateFirmware = channel.unary_unary(
         '/config.ConfigService/UpdateFirmware',
         request_serializer=config__service__pb2.UpdateFirmwareRequest.SerializeToString,
@@ -109,6 +114,13 @@ class ConfigServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetNewConfigDoc(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def UpdateFirmware(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -152,6 +164,11 @@ def add_ConfigServiceServicer_to_server(servicer, server):
       'CreateNewConfig': grpc.unary_unary_rpc_method_handler(
           servicer.CreateNewConfig,
           request_deserializer=config__service__pb2.NewConfigRequest.FromString,
+          response_serializer=config__service__pb2.Response.SerializeToString,
+      ),
+      'GetNewConfigDoc': grpc.unary_unary_rpc_method_handler(
+          servicer.GetNewConfigDoc,
+          request_deserializer=config__service__pb2.Identifier.FromString,
           response_serializer=config__service__pb2.Response.SerializeToString,
       ),
       'UpdateFirmware': grpc.unary_unary_rpc_method_handler(

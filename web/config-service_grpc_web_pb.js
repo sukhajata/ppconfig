@@ -629,6 +629,86 @@ proto.config.ConfigServicePromiseClient.prototype.createNewConfig =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.config.Identifier,
+ *   !proto.config.Response>}
+ */
+const methodDescriptor_ConfigService_GetNewConfigDoc = new grpc.web.MethodDescriptor(
+  '/config.ConfigService/GetNewConfigDoc',
+  grpc.web.MethodType.UNARY,
+  proto.config.Identifier,
+  proto.config.Response,
+  /**
+   * @param {!proto.config.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.config.Identifier,
+ *   !proto.config.Response>}
+ */
+const methodInfo_ConfigService_GetNewConfigDoc = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.config.Response,
+  /**
+   * @param {!proto.config.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.config.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.config.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.config.ConfigServiceClient.prototype.getNewConfigDoc =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/config.ConfigService/GetNewConfigDoc',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_GetNewConfigDoc,
+      callback);
+};
+
+
+/**
+ * @param {!proto.config.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.config.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.config.ConfigServicePromiseClient.prototype.getNewConfigDoc =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/config.ConfigService/GetNewConfigDoc',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_GetNewConfigDoc);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.config.UpdateFirmwareRequest,
  *   !proto.config.Response>}
  */
