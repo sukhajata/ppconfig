@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='config',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xe1\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12=\n\x13\x43reatePendingConfig\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12?\n\x0f\x43reateNewConfig\x12\x18.config.NewConfigRequest\x1a\x10.config.Response\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xe1\x03\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
 )
 
 
@@ -674,7 +674,7 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=926,
-  serialized_end=1535,
+  serialized_end=1407,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetDesired',
@@ -722,27 +722,9 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='CreatePendingConfig',
-    full_name='config.ConfigService.CreatePendingConfig',
-    index=5,
-    containing_service=None,
-    input_type=_IDENTIFIER,
-    output_type=_RESPONSE,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateNewConfig',
-    full_name='config.ConfigService.CreateNewConfig',
-    index=6,
-    containing_service=None,
-    input_type=_NEWCONFIGREQUEST,
-    output_type=_RESPONSE,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
     name='GetNewConfigDoc',
     full_name='config.ConfigService.GetNewConfigDoc',
-    index=7,
+    index=5,
     containing_service=None,
     input_type=_IDENTIFIER,
     output_type=_CONFIGDOC,
@@ -751,7 +733,7 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateFirmware',
     full_name='config.ConfigService.UpdateFirmware',
-    index=8,
+    index=6,
     containing_service=None,
     input_type=_UPDATEFIRMWAREREQUEST,
     output_type=_RESPONSE,
