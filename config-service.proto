@@ -75,9 +75,9 @@ service ConfigService {
 
     rpc GetAllConfig(Identifier) returns (ConfigFields) {}
 
-   // rpc CreatePendingConfig(Identifier) returns (Response) {}
+    rpc CreatePendingConfig(Identifier) returns (Response) {}
 
-    //rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
+    rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
 
     rpc GetNewConfigDoc(Identifier) returns (ConfigDoc) {}
 

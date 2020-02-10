@@ -470,6 +470,166 @@ proto.config.ConfigServicePromiseClient.prototype.getAllConfig =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.config.Identifier,
+ *   !proto.config.Response>}
+ */
+const methodDescriptor_ConfigService_CreatePendingConfig = new grpc.web.MethodDescriptor(
+  '/config.ConfigService/CreatePendingConfig',
+  grpc.web.MethodType.UNARY,
+  proto.config.Identifier,
+  proto.config.Response,
+  /**
+   * @param {!proto.config.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.config.Identifier,
+ *   !proto.config.Response>}
+ */
+const methodInfo_ConfigService_CreatePendingConfig = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.config.Response,
+  /**
+   * @param {!proto.config.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.config.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.config.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.config.ConfigServiceClient.prototype.createPendingConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/config.ConfigService/CreatePendingConfig',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_CreatePendingConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.config.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.config.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.config.ConfigServicePromiseClient.prototype.createPendingConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/config.ConfigService/CreatePendingConfig',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_CreatePendingConfig);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.config.NewConfigRequest,
+ *   !proto.config.Response>}
+ */
+const methodDescriptor_ConfigService_CreateNewConfig = new grpc.web.MethodDescriptor(
+  '/config.ConfigService/CreateNewConfig',
+  grpc.web.MethodType.UNARY,
+  proto.config.NewConfigRequest,
+  proto.config.Response,
+  /**
+   * @param {!proto.config.NewConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.config.NewConfigRequest,
+ *   !proto.config.Response>}
+ */
+const methodInfo_ConfigService_CreateNewConfig = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.config.Response,
+  /**
+   * @param {!proto.config.NewConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.config.NewConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.config.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.config.ConfigServiceClient.prototype.createNewConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/config.ConfigService/CreateNewConfig',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_CreateNewConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.config.NewConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.config.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.config.ConfigServicePromiseClient.prototype.createNewConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/config.ConfigService/CreateNewConfig',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_CreateNewConfig);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.config.Identifier,
  *   !proto.config.ConfigDoc>}
  */
 const methodDescriptor_ConfigService_GetNewConfigDoc = new grpc.web.MethodDescriptor(
