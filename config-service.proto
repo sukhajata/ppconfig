@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package config;
 
+import "google/protobuf/any.proto";
+
 message SetDesiredRequest {
     string identifier = 1;
     string fieldName = 2;
@@ -26,8 +28,8 @@ message Response {
 }
 
 message ConfigDoc {
-    map<string, string> desired = 1;
-    map<string, string> reported = 2;
+    map<string, google.protobuf.Any> desired = 1;
+    map<string, google.protobuf.Any> reported = 2;
 }
 
 message ConfigFields {

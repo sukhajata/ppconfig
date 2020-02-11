@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,8 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='config',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xe1\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12=\n\x13\x43reatePendingConfig\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12?\n\x0f\x43reateNewConfig\x12\x18.config.NewConfigRequest\x1a\x10.config.Response\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
-)
+  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\x1a\x19google/protobuf/any.proto\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xfc\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a\x44\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x1a\x45\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\x86\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\"9\n\x10NewConfigRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nidentifier\x18\x02 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xe1\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12=\n\x13\x43reatePendingConfig\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x12?\n\x0f\x43reateNewConfig\x12\x18.config.NewConfigRequest\x1a\x10.config.Response\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x62\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
 
 
@@ -66,8 +68,8 @@ _SETDESIREDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32,
-  serialized_end=110,
+  serialized_start=59,
+  serialized_end=137,
 )
 
 
@@ -118,8 +120,8 @@ _CHECKCONSISTENCYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=112,
-  serialized_end=210,
+  serialized_start=139,
+  serialized_end=237,
 )
 
 
@@ -163,8 +165,8 @@ _UPDATEREPORTEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=212,
-  serialized_end=294,
+  serialized_start=239,
+  serialized_end=321,
 )
 
 
@@ -194,8 +196,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=321,
+  serialized_start=323,
+  serialized_end=348,
 )
 
 
@@ -215,8 +217,8 @@ _CONFIGDOC_DESIREDENTRY = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='config.ConfigDoc.DesiredEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -232,8 +234,8 @@ _CONFIGDOC_DESIREDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=437,
-  serialized_end=483,
+  serialized_start=464,
+  serialized_end=532,
 )
 
 _CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
@@ -252,8 +254,8 @@ _CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='config.ConfigDoc.ReportedEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -269,8 +271,8 @@ _CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=532,
+  serialized_start=534,
+  serialized_end=603,
 )
 
 _CONFIGDOC = _descriptor.Descriptor(
@@ -306,8 +308,8 @@ _CONFIGDOC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=324,
-  serialized_end=532,
+  serialized_start=351,
+  serialized_end=603,
 )
 
 
@@ -337,8 +339,8 @@ _CONFIGFIELDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=534,
-  serialized_end=585,
+  serialized_start=605,
+  serialized_end=656,
 )
 
 
@@ -410,8 +412,8 @@ _CONFIGFIELD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=588,
-  serialized_end=722,
+  serialized_start=659,
+  serialized_end=793,
 )
 
 
@@ -448,8 +450,8 @@ _NEWCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=724,
-  serialized_end=781,
+  serialized_start=795,
+  serialized_end=852,
 )
 
 
@@ -479,8 +481,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=815,
+  serialized_start=854,
+  serialized_end=886,
 )
 
 
@@ -517,8 +519,8 @@ _GETCONFIGBYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=880,
+  serialized_start=888,
+  serialized_end=951,
 )
 
 
@@ -548,11 +550,13 @@ _UPDATEFIRMWAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=882,
-  serialized_end=923,
+  serialized_start=953,
+  serialized_end=994,
 )
 
+_CONFIGDOC_DESIREDENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _CONFIGDOC_DESIREDENTRY.containing_type = _CONFIGDOC
+_CONFIGDOC_REPORTEDENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _CONFIGDOC_REPORTEDENTRY.containing_type = _CONFIGDOC
 _CONFIGDOC.fields_by_name['desired'].message_type = _CONFIGDOC_DESIREDENTRY
 _CONFIGDOC.fields_by_name['reported'].message_type = _CONFIGDOC_REPORTEDENTRY
@@ -673,8 +677,8 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=926,
-  serialized_end=1535,
+  serialized_start=997,
+  serialized_end=1606,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetDesired',

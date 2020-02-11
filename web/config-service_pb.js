@@ -12,6 +12,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.config.CheckConsistencyRequest', null, global);
 goog.exportSymbol('proto.config.ConfigDoc', null, global);
 goog.exportSymbol('proto.config.ConfigField', null, global);
@@ -1040,8 +1042,8 @@ proto.config.ConfigDoc.prototype.toObject = function(opt_includeInstance) {
  */
 proto.config.ConfigDoc.toObject = function(includeInstance, msg) {
   var f, obj = {
-    desiredMap: (f = msg.getDesiredMap()) ? f.toObject(includeInstance, undefined) : [],
-    reportedMap: (f = msg.getReportedMap()) ? f.toObject(includeInstance, undefined) : []
+    desiredMap: (f = msg.getDesiredMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : [],
+    reportedMap: (f = msg.getReportedMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : []
   };
 
   if (includeInstance) {
@@ -1081,13 +1083,13 @@ proto.config.ConfigDoc.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = msg.getDesiredMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
          });
       break;
     case 2:
       var value = msg.getReportedMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
          });
       break;
     default:
@@ -1121,25 +1123,25 @@ proto.config.ConfigDoc.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDesiredMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
   }
   f = message.getReportedMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
   }
 };
 
 
 /**
- * map<string, string> desired = 1;
+ * map<string, google.protobuf.Any> desired = 1;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
  */
 proto.config.ConfigDoc.prototype.getDesiredMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
+  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
       jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+      proto.google.protobuf.Any));
 };
 
 
@@ -1153,15 +1155,15 @@ proto.config.ConfigDoc.prototype.clearDesiredMap = function() {
 
 
 /**
- * map<string, string> reported = 2;
+ * map<string, google.protobuf.Any> reported = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
  */
 proto.config.ConfigDoc.prototype.getReportedMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
+  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
+      proto.google.protobuf.Any));
 };
 
 
