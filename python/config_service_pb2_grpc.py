@@ -39,16 +39,6 @@ class ConfigServiceStub(object):
         request_serializer=config__service__pb2.Identifier.SerializeToString,
         response_deserializer=config__service__pb2.ConfigFields.FromString,
         )
-    self.CreatePendingConfig = channel.unary_unary(
-        '/config.ConfigService/CreatePendingConfig',
-        request_serializer=config__service__pb2.Identifier.SerializeToString,
-        response_deserializer=config__service__pb2.Response.FromString,
-        )
-    self.CreateNewConfig = channel.unary_unary(
-        '/config.ConfigService/CreateNewConfig',
-        request_serializer=config__service__pb2.NewConfigRequest.SerializeToString,
-        response_deserializer=config__service__pb2.Response.FromString,
-        )
     self.GetNewConfigDoc = channel.unary_unary(
         '/config.ConfigService/GetNewConfigDoc',
         request_serializer=config__service__pb2.Identifier.SerializeToString,
@@ -100,23 +90,12 @@ class ConfigServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreatePendingConfig(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CreateNewConfig(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def GetNewConfigDoc(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """rpc CreatePendingConfig(Identifier) returns (Response) {}
+
+    rpc CreateNewConfig(NewConfigRequest) returns (Response) {}
+
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -155,16 +134,6 @@ def add_ConfigServiceServicer_to_server(servicer, server):
           servicer.GetAllConfig,
           request_deserializer=config__service__pb2.Identifier.FromString,
           response_serializer=config__service__pb2.ConfigFields.SerializeToString,
-      ),
-      'CreatePendingConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.CreatePendingConfig,
-          request_deserializer=config__service__pb2.Identifier.FromString,
-          response_serializer=config__service__pb2.Response.SerializeToString,
-      ),
-      'CreateNewConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateNewConfig,
-          request_deserializer=config__service__pb2.NewConfigRequest.FromString,
-          response_serializer=config__service__pb2.Response.SerializeToString,
       ),
       'GetNewConfigDoc': grpc.unary_unary_rpc_method_handler(
           servicer.GetNewConfigDoc,
