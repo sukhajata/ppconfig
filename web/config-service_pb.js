@@ -1350,7 +1350,9 @@ proto.config.ConfigField.toObject = function(includeInstance, msg) {
     reported: jspb.Message.getFieldWithDefault(msg, 4, ""),
     fieldtype: jspb.Message.getFieldWithDefault(msg, 5, ""),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    pb_default: jspb.Message.getFieldWithDefault(msg, 7, "")
+    pb_default: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    min: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    max: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1414,6 +1416,14 @@ proto.config.ConfigField.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefault(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMin(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMax(value);
       break;
     default:
       reader.skipField();
@@ -1490,6 +1500,20 @@ proto.config.ConfigField.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getMin();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getMax();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -1619,6 +1643,42 @@ proto.config.ConfigField.prototype.getDefault = function() {
  */
 proto.config.ConfigField.prototype.setDefault = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string min = 8;
+ * @return {string}
+ */
+proto.config.ConfigField.prototype.getMin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.config.ConfigField} returns this
+ */
+proto.config.ConfigField.prototype.setMin = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string max = 9;
+ * @return {string}
+ */
+proto.config.ConfigField.prototype.getMax = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.config.ConfigField} returns this
+ */
+proto.config.ConfigField.prototype.setMax = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

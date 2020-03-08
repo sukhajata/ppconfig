@@ -44,6 +44,8 @@ message ConfigField{
     string fieldType = 5;
     string description = 6;
     string default = 7;
+    string min = 8;
+    string max = 9;
 }
 
 /*
