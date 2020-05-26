@@ -34,6 +34,11 @@ class ConfigServiceStub(object):
         request_serializer=config__service__pb2.GetConfigByNameRequest.SerializeToString,
         response_deserializer=config__service__pb2.ConfigField.FromString,
         )
+    self.GetConfigByIndex = channel.unary_unary(
+        '/config.ConfigService/GetConfigByIndex',
+        request_serializer=config__service__pb2.GetConfigByIndexRequest.SerializeToString,
+        response_deserializer=config__service__pb2.ConfigField.FromString,
+        )
     self.GetAllConfig = channel.unary_unary(
         '/config.ConfigService/GetAllConfig',
         request_serializer=config__service__pb2.Identifier.SerializeToString,
@@ -77,6 +82,13 @@ class ConfigServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetConfigByName(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetConfigByIndex(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -128,6 +140,11 @@ def add_ConfigServiceServicer_to_server(servicer, server):
       'GetConfigByName': grpc.unary_unary_rpc_method_handler(
           servicer.GetConfigByName,
           request_deserializer=config__service__pb2.GetConfigByNameRequest.FromString,
+          response_serializer=config__service__pb2.ConfigField.SerializeToString,
+      ),
+      'GetConfigByIndex': grpc.unary_unary_rpc_method_handler(
+          servicer.GetConfigByIndex,
+          request_deserializer=config__service__pb2.GetConfigByIndexRequest.FromString,
           response_serializer=config__service__pb2.ConfigField.SerializeToString,
       ),
       'GetAllConfig': grpc.unary_unary_rpc_method_handler(

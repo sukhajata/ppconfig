@@ -63,6 +63,11 @@ message GetConfigByNameRequest {
     string fieldName = 2;
 }
 
+message GetConfigByIndexRequest {
+    string identifier = 1;
+    int32 index = 2;
+}
+
 message UpdateFirmwareRequest {
     string firmware = 1;
 }
@@ -77,6 +82,8 @@ service ConfigService {
     rpc UpdateReported(UpdateReportedRequest) returns (Response) {}
 
     rpc GetConfigByName(GetConfigByNameRequest) returns (ConfigField) {}
+
+    rpc GetConfigByIndex(GetConfigByIndexRequest) returns (ConfigField) {}
 
     rpc GetAllConfig(Identifier) returns (ConfigFields) {}
 

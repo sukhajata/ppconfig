@@ -389,6 +389,86 @@ proto.config.ConfigServicePromiseClient.prototype.getConfigByName =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.config.GetConfigByIndexRequest,
+ *   !proto.config.ConfigField>}
+ */
+const methodDescriptor_ConfigService_GetConfigByIndex = new grpc.web.MethodDescriptor(
+  '/config.ConfigService/GetConfigByIndex',
+  grpc.web.MethodType.UNARY,
+  proto.config.GetConfigByIndexRequest,
+  proto.config.ConfigField,
+  /**
+   * @param {!proto.config.GetConfigByIndexRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.ConfigField.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.config.GetConfigByIndexRequest,
+ *   !proto.config.ConfigField>}
+ */
+const methodInfo_ConfigService_GetConfigByIndex = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.config.ConfigField,
+  /**
+   * @param {!proto.config.GetConfigByIndexRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.config.ConfigField.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.config.GetConfigByIndexRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.config.ConfigField)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.config.ConfigField>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.config.ConfigServiceClient.prototype.getConfigByIndex =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/config.ConfigService/GetConfigByIndex',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_GetConfigByIndex,
+      callback);
+};
+
+
+/**
+ * @param {!proto.config.GetConfigByIndexRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.config.ConfigField>}
+ *     A native promise that resolves to the response
+ */
+proto.config.ConfigServicePromiseClient.prototype.getConfigByIndex =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/config.ConfigService/GetConfigByIndex',
+      request,
+      metadata || {},
+      methodDescriptor_ConfigService_GetConfigByIndex);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.config.Identifier,
  *   !proto.config.ConfigFields>}
  */
