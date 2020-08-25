@@ -54,6 +54,11 @@ class ConfigServiceStub(object):
         request_serializer=config__service__pb2.UpdateFirmwareRequest.SerializeToString,
         response_deserializer=config__service__pb2.Response.FromString,
         )
+    self.AssignRadioOffset = channel.unary_unary(
+        '/config.ConfigService/AssignRadioOffset',
+        request_serializer=config__service__pb2.Identifier.SerializeToString,
+        response_deserializer=config__service__pb2.ConfigField.FromString,
+        )
 
 
 class ConfigServiceServicer(object):
@@ -119,6 +124,13 @@ class ConfigServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def AssignRadioOffset(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ConfigServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -161,6 +173,11 @@ def add_ConfigServiceServicer_to_server(servicer, server):
           servicer.UpdateFirmware,
           request_deserializer=config__service__pb2.UpdateFirmwareRequest.FromString,
           response_serializer=config__service__pb2.Response.SerializeToString,
+      ),
+      'AssignRadioOffset': grpc.unary_unary_rpc_method_handler(
+          servicer.AssignRadioOffset,
+          request_deserializer=config__service__pb2.Identifier.FromString,
+          response_serializer=config__service__pb2.ConfigField.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
