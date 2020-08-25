@@ -95,6 +95,6 @@ service ConfigService {
 
     rpc UpdateFirmware(UpdateFirmwareRequest) returns (Response) {}
 
-    rpc AssignRadioOffset(Identifier) returns (ConfigField) {}
+    rpc AssignRadioOffset(Identifier) returns (Response) {}
 
 }

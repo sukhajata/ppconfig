@@ -710,13 +710,13 @@ proto.config.ConfigServicePromiseClient.prototype.updateFirmware =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.config.Identifier,
- *   !proto.config.ConfigField>}
+ *   !proto.config.Response>}
  */
 const methodDescriptor_ConfigService_AssignRadioOffset = new grpc.web.MethodDescriptor(
   '/config.ConfigService/AssignRadioOffset',
   grpc.web.MethodType.UNARY,
   proto.config.Identifier,
-  proto.config.ConfigField,
+  proto.config.Response,
   /**
    * @param {!proto.config.Identifier} request
    * @return {!Uint8Array}
@@ -724,7 +724,7 @@ const methodDescriptor_ConfigService_AssignRadioOffset = new grpc.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto.config.ConfigField.deserializeBinary
+  proto.config.Response.deserializeBinary
 );
 
 
@@ -732,10 +732,10 @@ const methodDescriptor_ConfigService_AssignRadioOffset = new grpc.web.MethodDesc
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.config.Identifier,
- *   !proto.config.ConfigField>}
+ *   !proto.config.Response>}
  */
 const methodInfo_ConfigService_AssignRadioOffset = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.config.ConfigField,
+  proto.config.Response,
   /**
    * @param {!proto.config.Identifier} request
    * @return {!Uint8Array}
@@ -743,7 +743,7 @@ const methodInfo_ConfigService_AssignRadioOffset = new grpc.web.AbstractClientBa
   function(request) {
     return request.serializeBinary();
   },
-  proto.config.ConfigField.deserializeBinary
+  proto.config.Response.deserializeBinary
 );
 
 
@@ -752,9 +752,9 @@ const methodInfo_ConfigService_AssignRadioOffset = new grpc.web.AbstractClientBa
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.config.ConfigField)}
+ * @param {function(?grpc.web.Error, ?proto.config.Response)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.config.ConfigField>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.config.Response>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.config.ConfigServiceClient.prototype.assignRadioOffset =
@@ -773,7 +773,7 @@ proto.config.ConfigServiceClient.prototype.assignRadioOffset =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.config.ConfigField>}
+ * @return {!Promise<!proto.config.Response>}
  *     A native promise that resolves to the response
  */
 proto.config.ConfigServicePromiseClient.prototype.assignRadioOffset =
