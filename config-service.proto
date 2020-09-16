@@ -21,6 +21,7 @@ message UpdateReportedRequest {
     string deviceEUI = 1;
     int32 fieldIndex = 2;
     bytes fieldValue = 3;
+    int32 slot = 4;
 }
 
 message Response {

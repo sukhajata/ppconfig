@@ -728,7 +728,8 @@ proto.config.UpdateReportedRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     deviceeui: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fieldindex: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    fieldvalue: msg.getFieldvalue_asB64()
+    fieldvalue: msg.getFieldvalue_asB64(),
+    slot: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -777,6 +778,10 @@ proto.config.UpdateReportedRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setFieldvalue(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSlot(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -824,6 +829,13 @@ proto.config.UpdateReportedRequest.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeBytes(
       3,
+      f
+    );
+  }
+  f = message.getSlot();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -905,6 +917,24 @@ proto.config.UpdateReportedRequest.prototype.getFieldvalue_asU8 = function() {
  */
 proto.config.UpdateReportedRequest.prototype.setFieldvalue = function(value) {
   return jspb.Message.setProto3BytesField(this, 3, value);
+};
+
+
+/**
+ * optional int32 slot = 4;
+ * @return {number}
+ */
+proto.config.UpdateReportedRequest.prototype.getSlot = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.config.UpdateReportedRequest} returns this
+ */
+proto.config.UpdateReportedRequest.prototype.setSlot = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
