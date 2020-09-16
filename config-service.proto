@@ -57,6 +57,7 @@ message NewConfigRequest {
 
 message Identifier{
     string identifier = 1;
+    int32 slot = 2;
 }
 
 message GetConfigByNameRequest {

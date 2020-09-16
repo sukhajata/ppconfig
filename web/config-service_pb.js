@@ -1796,7 +1796,8 @@ proto.config.Identifier.prototype.toObject = function(opt_includeInstance) {
  */
 proto.config.Identifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    identifier: jspb.Message.getFieldWithDefault(msg, 1, "")
+    identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    slot: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1837,6 +1838,10 @@ proto.config.Identifier.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setIdentifier(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSlot(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1873,6 +1878,13 @@ proto.config.Identifier.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSlot();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1891,6 +1903,24 @@ proto.config.Identifier.prototype.getIdentifier = function() {
  */
 proto.config.Identifier.prototype.setIdentifier = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 slot = 2;
+ * @return {number}
+ */
+proto.config.Identifier.prototype.getSlot = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.config.Identifier} returns this
+ */
+proto.config.Identifier.prototype.setSlot = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
