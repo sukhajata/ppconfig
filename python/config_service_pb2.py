@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='config',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"N\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\xa0\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\x12\x0b\n\x03min\x18\x08 \x01(\t\x12\x0b\n\x03max\x18\t \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\"<\n\x17GetConfigByIndexRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xea\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12J\n\x10GetConfigByIndex\x12\x1f.config.GetConfigByIndexRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x12;\n\x11\x41ssignRadioOffset\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x14\x63onfig-service.proto\x12\x06\x63onfig\"\\\n\x11SetDesiredRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\x12\x12\n\nfieldValue\x18\x03 \x01(\t\x12\x0c\n\x04slot\x18\x04 \x01(\x05\"b\n\x17\x43heckConsistencyRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x0c\n\x04slot\x18\x02 \x01(\x05\x12\x12\n\nfieldIndex\x18\x03 \x01(\x05\x12\x12\n\nnumRetries\x18\x04 \x01(\x05\"R\n\x15UpdateReportedRequest\x12\x11\n\tdeviceEUI\x18\x01 \x01(\t\x12\x12\n\nfieldIndex\x18\x02 \x01(\x05\x12\x12\n\nfieldValue\x18\x03 \x01(\x0c\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"\xd0\x01\n\tConfigDoc\x12/\n\x07\x64\x65sired\x18\x01 \x03(\x0b\x32\x1e.config.ConfigDoc.DesiredEntry\x12\x31\n\x08reported\x18\x02 \x03(\x0b\x32\x1f.config.ConfigDoc.ReportedEntry\x1a.\n\x0c\x44\x65siredEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rReportedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x0c\x43onfigFields\x12#\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x13.config.ConfigField\"\xa0\x01\n\x0b\x43onfigField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x0f\n\x07\x64\x65sired\x18\x03 \x01(\t\x12\x10\n\x08reported\x18\x04 \x01(\t\x12\x11\n\tfieldType\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x07 \x01(\t\x12\x0b\n\x03min\x18\x08 \x01(\t\x12\x0b\n\x03max\x18\t \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"?\n\x16GetConfigByNameRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\tfieldName\x18\x02 \x01(\t\"<\n\x17GetConfigByIndexRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\")\n\x15UpdateFirmwareRequest\x12\x10\n\x08\x66irmware\x18\x01 \x01(\t2\xea\x04\n\rConfigService\x12;\n\nSetDesired\x12\x19.config.SetDesiredRequest\x1a\x10.config.Response\"\x00\x12G\n\x10\x43heckConsistency\x12\x1f.config.CheckConsistencyRequest\x1a\x10.config.Response\"\x00\x12\x43\n\x0eUpdateReported\x12\x1d.config.UpdateReportedRequest\x1a\x10.config.Response\"\x00\x12H\n\x0fGetConfigByName\x12\x1e.config.GetConfigByNameRequest\x1a\x13.config.ConfigField\"\x00\x12J\n\x10GetConfigByIndex\x12\x1f.config.GetConfigByIndexRequest\x1a\x13.config.ConfigField\"\x00\x12:\n\x0cGetAllConfig\x12\x12.config.Identifier\x1a\x14.config.ConfigFields\"\x00\x12:\n\x0fGetNewConfigDoc\x12\x12.config.Identifier\x1a\x11.config.ConfigDoc\"\x00\x12\x43\n\x0eUpdateFirmware\x12\x1d.config.UpdateFirmwareRequest\x1a\x10.config.Response\"\x00\x12;\n\x11\x41ssignRadioOffset\x12\x12.config.Identifier\x1a\x10.config.Response\"\x00\x62\x06proto3')
 )
 
 
@@ -54,6 +54,13 @@ _SETDESIREDREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='slot', full_name='config.SetDesiredRequest.slot', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -67,7 +74,7 @@ _SETDESIREDREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=32,
-  serialized_end=110,
+  serialized_end=124,
 )
 
 
@@ -118,8 +125,8 @@ _CHECKCONSISTENCYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=112,
-  serialized_end=210,
+  serialized_start=126,
+  serialized_end=224,
 )
 
 
@@ -163,8 +170,8 @@ _UPDATEREPORTEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=212,
-  serialized_end=294,
+  serialized_start=226,
+  serialized_end=308,
 )
 
 
@@ -194,8 +201,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=321,
+  serialized_start=310,
+  serialized_end=335,
 )
 
 
@@ -232,8 +239,8 @@ _CONFIGDOC_DESIREDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=437,
-  serialized_end=483,
+  serialized_start=451,
+  serialized_end=497,
 )
 
 _CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
@@ -269,8 +276,8 @@ _CONFIGDOC_REPORTEDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=532,
+  serialized_start=499,
+  serialized_end=546,
 )
 
 _CONFIGDOC = _descriptor.Descriptor(
@@ -306,8 +313,8 @@ _CONFIGDOC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=324,
-  serialized_end=532,
+  serialized_start=338,
+  serialized_end=546,
 )
 
 
@@ -337,8 +344,8 @@ _CONFIGFIELDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=534,
-  serialized_end=585,
+  serialized_start=548,
+  serialized_end=599,
 )
 
 
@@ -424,8 +431,8 @@ _CONFIGFIELD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=588,
-  serialized_end=748,
+  serialized_start=602,
+  serialized_end=762,
 )
 
 
@@ -455,8 +462,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=750,
-  serialized_end=782,
+  serialized_start=764,
+  serialized_end=796,
 )
 
 
@@ -493,8 +500,8 @@ _GETCONFIGBYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=784,
-  serialized_end=847,
+  serialized_start=798,
+  serialized_end=861,
 )
 
 
@@ -531,8 +538,8 @@ _GETCONFIGBYINDEXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=849,
-  serialized_end=909,
+  serialized_start=863,
+  serialized_end=923,
 )
 
 
@@ -562,8 +569,8 @@ _UPDATEFIRMWAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=911,
-  serialized_end=952,
+  serialized_start=925,
+  serialized_end=966,
 )
 
 _CONFIGDOC_DESIREDENTRY.containing_type = _CONFIGDOC
@@ -687,8 +694,8 @@ _CONFIGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=955,
-  serialized_end=1573,
+  serialized_start=969,
+  serialized_end=1587,
   methods=[
   _descriptor.MethodDescriptor(
     name='SetDesired',

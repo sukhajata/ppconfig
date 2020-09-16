@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package config;
 
-//import "google/protobuf/any.proto";
 
 message SetDesiredRequest {
     string identifier = 1;
     string fieldName = 2;
     string fieldValue = 3;
+    int32 slot = 4;
 } 
 
 message CheckConsistencyRequest {

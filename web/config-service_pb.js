@@ -288,7 +288,8 @@ proto.config.SetDesiredRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fieldname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fieldvalue: jspb.Message.getFieldWithDefault(msg, 3, "")
+    fieldvalue: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    slot: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -337,6 +338,10 @@ proto.config.SetDesiredRequest.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldvalue(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSlot(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -384,6 +389,13 @@ proto.config.SetDesiredRequest.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getSlot();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -441,6 +453,24 @@ proto.config.SetDesiredRequest.prototype.getFieldvalue = function() {
  */
 proto.config.SetDesiredRequest.prototype.setFieldvalue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 slot = 4;
+ * @return {number}
+ */
+proto.config.SetDesiredRequest.prototype.getSlot = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.config.SetDesiredRequest} returns this
+ */
+proto.config.SetDesiredRequest.prototype.setSlot = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
